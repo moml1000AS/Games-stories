@@ -1,0 +1,784 @@
+body {
+  font-family: 'Tajawal', sans-serif;
+  background-color: black;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  line-height: 1.8;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+header {
+  background: url("img/game-background.jpg") no-repeat center center/cover;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+body {
+  padding-top: 80px; /* أو بنفس ارتفاع الهيدر حتى لا يغطي المحتوى */
+}
+
+/* اللوجو */
+.logo {
+  width: 130px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* زر تسجيل الدخول */
+.sai {
+  background: linear-gradient(135deg, #e50914 0%, #b20710 100%);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(229, 9, 20, 0.6);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+  user-select: none;
+}
+
+.sai:hover, .sai:focus {
+  background: linear-gradient(135deg, #b20710 0%, #7d060c 100%);
+  box-shadow: 0 6px 12px rgba(229, 9, 20, 0.8);
+  outline: none;
+}
+
+/* روابط */
+.link {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 17px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #ffcc00;
+  bottom: -3px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.link:hover {
+  color: #ffcc00;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+/* منطقة اللاندينق */
+.loge {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 40px;
+  gap: 30px;
+  flex-wrap: wrap;
+  background: linear-gradient(90deg, rgba(255,204,0,0.1), transparent 70%);
+  border-left: 6px solid #ffcc00;
+  border-radius: 0 15px 15px 0;
+  box-shadow: inset 0 0 15px rgba(255, 204, 0, 0.15);
+}
+
+/* صندوق النص */
+.text-box {
+  max-width: 650px;
+  padding: 15px 10px;
+  background: rgba(255, 204, 0, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 0 15px #ffcc00;
+  transition: box-shadow 0.4s ease;
+}
+
+.text-box:hover {
+  box-shadow: 0 0 30px rgba(255, 204, 0, 0.6);
+}
+
+.text-box span {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  letter-spacing: 1.2px;
+  user-select: none;
+}
+
+.text-box h1 {
+  font-size: 42px;
+  font-weight: 900;
+  margin-bottom: 22px;
+  line-height: 1.1;
+  text-shadow: 0 0 8px ffcc00;
+}
+
+.text-box p {
+  font-size: 18px;
+  color: #e0e0e0;
+  margin-bottom: 25px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* حقل البحث */
+.ssearch {
+  margin-top: 10px;
+}
+
+.se {
+  padding: 12px 15px;
+  font-size: 17px;
+  width: 250px;
+  border-radius: 8px;
+  border: 1.5px solid #ffcc00;
+  background-color: transparent;
+  color: white;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.se:focus {
+  outline: none;
+  border-color: #fff24f;
+  box-shadow: 0 0 8px #fff24f;
+}
+
+.bu {
+  padding: 12px 22px;
+  font-size: 17px;
+  background: #ffcc00;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 4px 8px rgba(255, 204, 0, 0.5);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bu:hover, .bu:focus {
+  background: #f5d42f;
+  box-shadow: 0 6px 15px rgba(255, 204, 0, 0.9);
+  outline: none;
+}
+
+/* قسم القصة */
+.story {
+  padding: 50px 40px;
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  box-shadow: 0 0 40px rgba(255, 204, 0, 0.1);
+  max-width: 1000px;
+  margin: 40px auto;
+  transition: box-shadow 0.3s ease;
+}
+
+.story:hover {
+  box-shadow: 0 0 60px rgba(255, 204, 0, 0.3);
+}
+
+.story span {
+  font-size: 26px;
+  font-weight: 900;
+  color: #ffcc00;
+  text-shadow: 0 0 10px #ffcc00;
+  user-select: none;
+}
+
+/* لعبة */
+.games h1 {
+  font-size: 32px;
+  color: white;
+  margin-bottom: 30px;
+  font-weight: 900;
+  text-shadow: 0 0 8px rgba(255, 204, 0, 0.7);
+}
+
+/* حاوية الألعاب */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 0 15px;
+}
+
+/* كل لعبة */
+.game-item {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 15px;
+  border-radius: 15px;
+  background: rgba(255, 204, 0, 0.05);
+  box-shadow: 0 0 30px rgba(255, 204, 0, 0.1);
+  transition: box-shadow 0.4s ease;
+}
+
+.game-item:hover {
+  box-shadow: 0 0 45px rgba(255, 204, 0, 0.3);
+}
+
+.game-info p {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  user-select: none;
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+}
+
+/* الخطوط الجانبية */
+.vertical-line {
+  border-left: 5px solid #ffcc00;
+  padding-left: 15px;
+  margin: 15px 0;
+  color: #ddd;
+  font-size: 18px;
+  line-height: 1.7;
+  font-weight: 500;
+  text-align: justify;
+  user-select: none;
+}
+
+/* التأثيرات العامة للأزرار والعناصر */
+.zm {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.zm:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.8);
+}
+
+.zm:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
+}
+
+/* كلاس as */
+.as {
+  max-width: 260px;
+  border-radius: 0 !important;
+  padding: 14px;
+  background-color: #111;
+  border: 3px solid #ffcc00;
+  box-shadow: 0 0 18px rgba(255, 204, 0, 0.7);
+  transition: box-shadow 0.4s ease;
+  overflow: hidden;
+  user-select: none;
+}
+
+.as:hover {
+  box-shadow: 0 0 35px rgba(255, 204, 0, 1);
+}
+
+/* كلاس gh */
+.gh {
+  border-radius: 15px;
+  border: 3px solid #ffcc00;
+  overflow: hidden;
+  max-width: 350px;
+  width: 100%;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(255, 204, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  user-select: none;
+}
+
+.gh:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 10px rgba(255, 204, 0, 0.9);
+}
+
+.gh:hover {
+  transform: scale(1.07);
+  box-shadow: 0 10px 30px rgba(255, 204, 0, 1);
+}
+
+/* كلاس للألعاب الأخرى */
+.el, .re, .la, .se, .ac, .wi, .sp {
+  border-radius: 15px;
+  border: 3px solid transparent;
+  overflow: hidden;
+  max-width: 350px;
+  width: 100%;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  user-select: none;
+  object-fit: cover;
+  height: auto;
+}
+
+/* حواف ملونة لكل لعبة */
+.el { border-color: #ffcc00; }
+.re { border-color: #ffcc00; }
+.la { border-color: #ffcc00; }
+.se { border-color: #ffcc00; }
+.ac { border-color: #ffcc00; }
+.wi { border-color: #ffcc00; }
+.sp { border-color: #ffcc00; }
+/* حواف ملونة لكل لعبة */
+.el, .re, .la, .se, .ac, .wi, .sp {
+  border-color: #ffcc00;
+  box-shadow: 0 0 12px 4px rgba(255, 204, 0, 0.6); /* أصفر غامق */
+  transition: box-shadow 0.3s ease;
+}
+/* تأثير الضغط */
+.el:active, .re:active, .la:active, .se:active, .ac:active, .wi:active, .sp:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 8px currentColor;
+}
+
+/* تصميم متجاوب */
+@media (max-width: 768px) {
+  .loge, .game-item, .sui-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-box h1 {
+    font-size: 32px;
+  }
+
+  .text-box span {
+    font-size: 20px;
+  }
+
+  .text-box p {
+    font-size: 16px;
+  }
+
+  .header {
+    justify-content: center;
+    padding: 15px 20px;
+  }
+
+  .se {
+    width: 100%;
+    max-width: 320px;
+    margin-bottom: 10px;
+  }
+
+  .bu {
+    width: 100%;
+    max-width: 160px;
+  }
+
+  .logo {
+    width: 110px;
+  }
+
+  .sai {
+    font-size: 15px;
+    padding: 10px 15px;
+  }
+
+  .as {
+    max-width: 90%;
+  }
+
+  .gh, .el, .re, .la, .se, .ac, .wi, .sp {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+/* تأثير تكبير مع إضاءة عند المرور على الصورة */
+.gh, .el, .re, .la, .se, .ac, .wi, .sp {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+  user-select: none;
+  display: block;
+}
+
+/* عند المرور على الصورة (تكبير + توهج) */
+.gh:hover, .el:hover, .re:hover, .la:hover, .se:hover, .ac:hover, .wi:hover , .sp:active {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px 8px rgba(255, 204, 0, 0.8);
+  z-index: 10; /* لضمان ظهورها فوق العناصر الأخرى */
+}
+
+/* عند الضغط على الصورة (تصغير + إضاءة أقل) */
+.gh:active, .el:active, .re:active, .la:active, .se:active, .ac:active, .wi:active, .sp:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 10px 5px rgba(255, 204, 0, 0.5);
+}
+.story-part {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.story-part:active {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.7); /* إضاءة صفراء خفيفة */
+}
+.vertical-line {
+  background: #1e1e1e;       /* خلفية داكنة ناعمة */
+  color: #eee;               /* لون نص فاتح وواضح */
+  font-size: 1.1rem;         
+  line-height: 1.6;          
+  margin: 0.6rem 0;          
+  padding: 12px 16px;        
+  border-left: 4px solid #8B0000;  /* خط عمودي أحمر داكن */
+  border-radius: 4px;        
+  box-shadow: 0 2px 6px rgba(139,0,0,0.5); /* ظل ناعم أحمر داكن */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: default;
+}
+
+.vertical-line:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(139,0,0,0.8);
+  background: #2a2a2a; /* خلفية أفتح قليلاً عند التمرير */
+}
+/* تنسيق شريط البحث */
+
+
+
+.bu {
+  padding: 10px 20px;
+  background-color: #ffcc00;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bu:hover {
+  background-color: #ffcc00;
+}
+
+/* الهيدر */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #111;
+  direction: rtl;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+
+
+
+
+
+
+/* تحسين الهيدر على الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+  
+  .logo {
+    align-self: center;
+    width: 100px;
+    height: auto;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .search-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .search-container input.se {
+    width: 90%;
+    max-width: 300px;
+    margin-bottom: 10px;
+  }
+  
+  .search-container .bu {
+    width: 60%;
+    max-width: 200px;
+  }
+}
+
+  html {
+  scroll-behavior: smooth;
+
+}
+
+.moml {
+  color: #e0f7ff !important; /* لون نص أزرق فاتح */
+  text-shadow:important
+    0 0 10pxdarkred,
+    0 0 10px darkred,
+    0 0 10px darkred,
+    0 0 10px darkred;
+  font-weight: soild !important;
+  font-size: 2em !important;
+  max-width: 650px;
+padding: 15px 10px;
+
+  text-shadow: 0 0 10px #440000 !important;
+  letter-spacing: 1px;
+  font-family: 'Tajawal', sans-serif;
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.moml:hover {
+  text-shadow:
+    0 0 2px darkred,
+    0 0 2px darkred,
+    0 0 2px #3399ff,
+    0 0 2px #0077ff;
+}
+
+
+
+/* تأثير توهج للنصوص */
+@keyframes glow-text {
+  0% {
+    text-shadow:
+      0 0 5px #FFD700,
+      0 0 10px #FFC300,
+      0 0 15px #FFB700,
+      0 0 20px #FFA500;
+  }
+  50% {
+    text-shadow:
+      0 0 10px #FFD700,
+      0 0 20px #FFC300,
+      0 0 30px #FFB700,
+      0 0 40px #FFA500;
+  }
+  100% {
+    text-shadow:
+      0 0 5px #FFD700,
+      0 0 10px #FFC300,
+      0 0 15px #FFB700,
+      0 0 20px #FFA500;
+  }
+}
+
+/* رسالة الترحيب */
+#welcomeMsg {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 0, 0.3);
+  padding: 25px 30px;
+  border-radius: 12px;
+  font-size: 18px;
+  color: white;
+  font-family: 'Tajawal', sans-serif;
+  margin: 30px auto;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255, 255, 0, 0.15);
+  animation: fadeInMsg 0.6s ease-out;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#welcomeMsg strong {
+  color: #ffcc00;
+  font-size: 20px;
+  animation: glow-text 2s infinite ease-in-out;
+}
+
+#welcomeMsg .highlight-welcome {
+  color: #ffcc00;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+#welcomeMsg a {
+  color: yellow;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+#welcomeMsg a:hover {
+  color: gold;
+  text-decoration: underline;
+}
+
+/* زر تسجيل الخروج */
+#logoutBtn,
+.logout-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ffcc00;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #ffcc00aa;
+}
+
+#logoutBtn:hover,
+.logout-btn:hover {
+  background-color: gold;
+  box-shadow: 0 0 20px #ffcc00;
+  transform: scale(1.05);
+}
+
+/* شريط التنقل */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: black;
+  padding: 20px 40px;
+  color: white;
+  font-family: 'Tajawal', sans-serif;
+}
+
+/* الشعار */
+.logo {
+  font-size: 24px;
+  color: yellow;
+  font-weight: bold;
+  animation: glow-text 3s infinite ease-in-out;
+}
+
+/* زر الرئيسية */
+.home-btn {
+  background: #ffcc00;
+  color: black;
+  padding: 8px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.home-btn:hover {
+  background: gold;
+  box-shadow: 0 0 10px yellow;
+}
+
+/* تأثير دخول */
+@keyframes fadeInMsg {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* === Spider-Man: Miles Morales styling === */
+.sp {
+  display: block;
+  width: 350px;
+  height: auto;
+  border: 3px solid #ffcc00;          /* إطار أصفر واضح */
+  border-radius: 0;                   /* بدون حواف دائرية */
+  box-shadow: 0 0 15px rgba(255,204,0,0.7); /* توهج أصفر خفيف */
+  margin: auto;                       /* يتمركز أفقيًا */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.sp:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255,204,0,1);
+}
+
+.sp:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 10px rgba(255,204,0,0.8);
+}
+/* 1. تحسين تأثير الزر (الأعلى أولوية) */
+
+
+/* 2. حركة ناعمة للصور عند المرور */
+.gh:hover, .el:hover, .re:hover, .la:hover, .se:hover, .ac:hover, .wi:hover , .sp:hover {
+  transform: scale(1.12) rotate(2deg) !important;
+  box-shadow: 0 0 25px 10px rgba(255, 204, 0, 0.85) !important;
+  transition: transform 0.35s ease, box-shadow 0.35s ease !important;
+}
+
+/* 3. تدرج خلفية بسيط للهيدر */
+header {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url("img/game-background.jpg") no-repeat center center/cover !important;
+  position: relative !important;
+}
+
+/* 4. إضافة ظل بسيط تحت الهيدر */
+header::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 12px !important;
+  background: linear-gradient(to top, rgba(255, 204, 0, 0.7), transparent) !important;
+  pointer-events: none !important;
+}
+
+/* 5. ظل متحرك ناعم للنصوص المهمة */
+.glowing-text {
+  color: #ffcc00 !important;
+  text-shadow:
+    0 0 5px #ffd700,
+    0 0 10px #ffcc00,
+    0 0 20px #ffa500,
+    0 0 30px #ff9900 !important;
+  animation: pulseGlow 3s infinite ease-in-out !important;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 5px #ffd700,
+      0 0 10px #ffcc00,
+      0 0 20px #ffa500,
+      0 0 30px #ff9900;
+  }
+  50% {
+    text-shadow:
+      0 0 10px #fff44f,
+      0 0 15px #ffe066,
+      0 0 25px #ffb84d,
+      0 0 35px #ff9933;
+  }
+}

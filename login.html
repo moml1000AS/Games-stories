@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>تسجيل الدخول - Luew</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #000;
+      font-family: 'Tajawal', sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 40px 30px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 15px rgba(255, 255, 0, 0.3);
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: yellow;
+      font-size: 24px;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      background-color: #111;
+      color: white;
+      font-size: 16px;
+    }
+
+    .login-container input::placeholder {
+      color: #aaa;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: yellow;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+      font-size: 16px;
+    }
+
+    .login-container button:hover {
+      background-color: gold;
+    }
+
+    .login-container .link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .login-container .link:hover {
+      color: yellow;
+    }
+
+    #msg {
+      text-align: center;
+      margin-top: 10px;
+      min-height: 24px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>تسجيل الدخول</h2>
+    <input type="email" id="email" placeholder="البريد الإلكتروني" />
+    <input type="password" id="password" placeholder="كلمة المرور" />
+    <button onclick="login()">تسجيل الدخول</button>
+
+    <a href="register.html" class="link">إنشاء حساب جديد</a>
+
+    <div id="msg"></div>
+  </div>
+
+  <script>
+    function login() {
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const msg = document.getElementById('msg');
+
+      if (!email || !password) {
+        msg.textContent = 'يرجى ملء جميع الحقول.';
+        msg.style.color = 'red';
+        return;
+      }
+
+      let foundUser = null;
+
+      // البحث في localStorage عن المستخدم بالبريد الإلكتروني
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        try {
+          const userData = JSON.parse(localStorage.getItem(key));
+          if (userData && userData.email === email) {
+            foundUser = userData;
+            break;
+          }
+        } catch (e) {
+          // تجاهل السجلات غير الصحيحة
+        }
+      }
+
+      if (!foundUser) {
+        msg.textContent = 'المستخدم غير موجود.';
+        msg.style.color = 'red';
+        return;
+      }
+
+      if (foundUser.password === password) {
+        localStorage.setItem('loggedInUser', foundUser.username);
+        msg.style.color = 'lightgreen';
+        msg.textContent = `مرحباً، ${foundUser.username}! تم تسجيل الدخول بنجاح.`;
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 1500);
+      } else {
+        msg.textContent = 'كلمة المرور غير صحيحة.';
+        msg.style.color = 'red';
+      }
+    }
+  </script>
+  <style>
+  body {
+    background-color: #000;
+    font-family: 'Tajawal', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .login-container {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 40px 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.3);
+    animation: fadeIn 0.7s ease-out;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: yellow;
+    font-size: 24px;
+  }
+
+  .login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #111;
+    color: white;
+    font-size: 16px;
+  }
+
+  .login-container input::placeholder {
+    color: #aaa;
+  }
+
+  .login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s;
+  }
+
+  .login-container button:hover {
+    background-color: gold;
+    transform: scale(1.03);
+  }
+
+  .login-container .link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s
+</body>
+</html>

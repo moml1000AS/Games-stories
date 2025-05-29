@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luew </title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <body>
+  
+  <div id="welcomeMsg"></div>
+  <!-- باقي الصفحة -->
+</body>
+
+<!-- داخل الـ body ضع هذا السطر -->
+<div id="welcomeMsg" class="welcome-box"></div>
+
+<!-- داخل body -->
+<div id="welcomeMsg" class="welcome-box"></div>
+
+<style>
+  .welcome-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 25px 30px;
+    border-radius: 12px;
+    color: white;
+    font-size: 18px;
+    font-family: 'Tajawal', sans-serif;
+    margin: 30px auto;
+    max-width: 500px;
+    text-align: center;
+    border: 1px solid #ffcc00;
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.15);
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+  }
+
+  .welcome-box strong {
+    color: #ffcc00;
+    font-size: 20px;
+  }
+
+  .highlight-welcome {
+    color: #ffcc00;
+    font-weight: bold;
+    font-size: 22px;
+  }
+
+  .welcome-box a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .logout-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ffcc00;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #ffcc00aa;
+  }
+
+  .logout-btn:hover {
+    background: #ffe066;
+    box-shadow: 0 0 20px #ffcc00;
+    transform: scale(1.05);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<script>
+  const user = localStorage.getItem("loggedInUser");
+  const welcomeMsg = document.getElementById("welcomeMsg");
+
+  if (user) {
+    welcomeMsg.innerHTML = `
+      <div>
+        <span class="highlight-welcome">👋 مرحباً</span>، <strong>${user}</strong>! أنت مسجل دخول حالياً.
+        <br>
+        <button id="logoutBtn" class="logout-btn">تسجيل خروج</button>
+      </div>
+    `;
+
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.removeItem("loggedInUser");
+      welcomeMsg.innerHTML = `🚫 تم تسجيل الخروج بنجاح. <a href="register.html">أنشئ حساب جديد</a>`;
+    });
+  } else {
+    welcomeMsg.innerHTML = `🚫 ليس لديك حساب! <a href="register.html">أنشئ حساب الآن</a>`;
+  }
+</script>
+
+<script>
+  const user = localStorage.getItem("loggedInUser");
+  const welcomeMsg = document.getElementById("welcomeMsg");
+
+  if (user) {
+    welcomeMsg.innerHTML = `
+      👋 مرحباً، <strong>${user}</strong>! أنت مسجل دخول حالياً.
+      <br>
+      <button id="logoutBtn" class="logout-btn">تسجيل خروج</button>
+    `;
+
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.removeItem("loggedInUser");
+      welcomeMsg.innerHTML = `🚫 تم تسجيل الخروج بنجاح. <a href="register.html">أنشئ حساب جديد</a>`;
+    });
+  } else {
+    welcomeMsg.innerHTML = `🚫 ليس لديك حساب! <a href="register.html">أنشئ حساب الآن</a>`;
+  }
+</script>
+  
+</div>
+
+<!-- الهيدر -->
+<div class="header">
+  <img class="logo" src="Photoroom_٢٠٢٥٠٤٢١_٢٣١٣١٧.png" alt="Logo" class="logo" />
+  <div class="header-buttons">
+    <a href="login.html" class="sai">Sign In</a>
+    <a class="link" href="#witcher3">Home</a>
+  </div>
+</div>
+  <!-- landing page -->
+  <div class="loge" id="assassin">
+    <div class="text-box">
+      <span class="moml">Welcome To Luew!</span>
+      <h1>Best gaming site ever</h1>
+
+      <h2>🎮 Assassin’s Creed Origins
+</h2>
+<p>
+🧭 القصة:
+تدور أحداث اللعبة في مصر القديمة خلال نهاية العصر البطلمي، حيث ينطلق اللاعب في رحلة مثيرة مع شخصية بايك، وهو محارب من الإسكندرية يسعى لاكتشاف أسرار الماضي وحقيقة منظمة “الأساسنز”.
+تبدأ القصة بعد مقتل ابن بايك، فتتغير حياته وينطلق في سعي للانتقام وكشف المؤامرات التي تحيط بمصر آنذاك.
+تتعمق اللعبة في أصول الصراع بين الأخوية السرية (الأساسنز) والفرسان (التيمبلرز)، وتكشف كيف نشأت هذه المنظمة التي تحارب من أجل الحرية والعدالة.
+خلال الرحلة، يستكشف اللاعب أهرامات مصر، الصحراء، ومدنها القديمة، ويواجه أعداء خطرين بينما يكشف أسرار الحضارة الفرعونية
+      </p>
+      
+
+      <div class="ssearch">
+        <input
+          id="gameInput"
+          placeholder="Start typing..."
+          list="gameSuggestions"
+          class="se"
+          autocomplete="off"
+        />
+        <datalist id="gameSuggestions"></datalist>
+        <button class="bu" id="goBtn">Search</button>
+      </div>
+    </div>
+
+    <div class="img as" style="text-align:center;">
+      <img src=".png" alt="Assassin’s Creed" style="max-width: 90%; height: auto;" class="zm" width="900px"/>
+    </div>
+  </div>
+
+  <div class="story">
+    <span class="moml">STORY</span>
+    <div class="games">
+      <h1>The story of these games</h1>
+
+      <div class="game-container">
+
+        <!-- The Witcher 3: Wild Hunt -->
+        <div id="witcher3" class="sui-info reverseop">
+          <img class="wi" src=".jpeg" width="350" alt="The Witcher 3: Wild Hunt" />
+          <div class="game-info">
+            <h2>🎮 The Witcher 3: Wild Hunt</h2>
+            <div class="vertical-line">🧭 <strong>القصة:</strong></div>
+            <div class="vertical-line">
+              تدور القصة حول “جيرالت من ريفيا”، صائد الوحوش المحترف، الذي ينطلق في رحلة للعثور على ابنته بالتبني “سيري”.
+            </div>
+            <div class="vertical-line">
+              تتمتع “سيري” بقدرات خارقة، وتبحث عنها قوى شريرة تدعى “الصيد البري”، وهي فرسان يسعون للسيطرة على قوتها.
+            </div>
+            <div class="vertical-line">
+              تقييم اللاعبين: ⭐ 9.1/10. اللعبة حققت نجاحًا كبيرًا بفضل عالمها المفتوح وقصتها المليئة بالتشويق.
+            </div>
+          </div>
+        </div>
+
+        <!-- Elden Ring -->
+        <div id="eldenring" class="sui-info reverseop">
+          <img class="game-img el" src="e.jpeg" width="450" alt="Elden Ring" />
+          <div class="game-info">
+            <h2>🎮 Elden Ring</h2>
+            <div class="vertical-line">🧭 <strong>القصة:</strong></div>
+            <div class="vertical-line">
+              في لعبة "Elden Ring"، يلعب اللاعب دور شخصية تُسمى "في عالم مغطى بالظلام والفوضى.
+            </div>
+            <div class="vertical-line">
+              مهمتك هي العثور على "Elden Ring" المكسور لاستعادة النظام في عالم مليء بالمخاطر والوحوش والآلهة القوية.
+            </div>
+            <div class="vertical-line">
+              تقييم اللاعبين: ⭐ 9.5/10. حققت اللعبة إعجابًا كبيرًا بفضل عالمها المفتوح، وتصميم المعارك المذهل، والقصة الغامضة.
+            </div>
+          </div>
+        </div>
+
+        <!-- Sekiro -->
+        <div id="sekiro" class="sui-info reverseop">
+          <div class="sui-nameop">
+            <img src="IMG_.png" width="350" alt="Sekiro Image" class="se" />
+            <h2>🎮 Sekiro: Shadows Die Twice</h2>
+            <div class="vertical-line">🧭 <strong>القصة:</strong></div>
+            <div class="vertical-line">
+              في أواخر حقبة السينغوكو في اليابان، يتقمص اللاعب دور “الذئب”،
+            </div>
+            <div class="vertical-line">
+              شينوبي فقد ذراعه اليسرى أثناء محاولته حماية سيده الشاب “كورو”،
+            </div>
+            <div class="vertical-line">
+              الوريث لدماء التنين التي تمنح الخلود. بعد إنقاذه من قبل نحات غامض،
+            </div>
+            <div class="vertical-line">
+              يُزوَّد بذراع صناعية متعددة الاستخدامات، ويبدأ رحلة محفوفة بالمخاطر
+            </div>
+            <div class="vertical-line">
+              لاستعادة كورو ومواجهة عشيرة “آشينا” التي تسعى لاستغلال قوى سيده.
+            </div>
+          </div>
+        </div>
+
+        <!-- Ghost of Tsushima -->
+        <div id="ghost" class="sui-info reverseop" style="display: flex; gap: 20px; align-items: flex-start;">
+          <div class="sui-nameop" style="flex: 1;">
+            <img src="g.jpeg" width="350" alt="Ghost of Tsushima Image" class="gh" />
+            <h2>🎮 Ghost of Tsushima</h2>
+
+            <div class="vertical-line-container">
+              <div class="vertical-line">🧭 <strong>القصة:</strong></div>
+              <div class="vertical-line">
+                تقع أحداث القصة في جزيرة تسوشيما خلال الغزو المغولي لليابان في القرن الثالث عشر.
+              </div>
+              <div class="vertical-line">
+                يتبع اللاعب شخصية "جين ساكاي"، ساموراي يسعى لحماية أرضه وشعبه بأي وسيلة ممكنة.
+              </div>
+              <div class="vertical-line">
+                يتخلى جين عن بعض تقاليد الساموراي ويبدأ باستخدام أساليب التخفي والاغتيال ليهزم الغزاة.
+              </div>
+              <div class="vertical-line">
+                القصة تتمحور حول الشرف، الواجب، والتضحية، وقد حصدت تقييم لاعبين: 9.2 / 10.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Last of Us Part II -->
+        <div id="lastofus" class="sui-info reverseop" style="display: flex; gap: 20px; align-items: flex-start;">
+          <div class="sui-nameop" style="flex: 1;">
+            <img src="IMG_5268.jpeg" width="350" alt="The Last of Us Part II Image" class="la" />
+            <h2>🎮 The Last of Us Part II</h2>
+
+            <div class="vertical-line-container">
+              <div class="vertical-line">🧭 <strong>القصة:</strong></div>
+              <div class="vertical-line">
+                بعد سنوات من الأحداث، تتبع القصة إيلي في عالم مدمر نتيجة لوباء قاتل، وتبدأ رحلتها بعد مأساة شخصية.
+              </div>
+              <div class="vertical-line">
+                الرحلة تأخذها إلى صراعات داخلية وتحالفات غير متوقعة في عالم عنيف ومضطرب.
+              </div>
+              <div class="vertical-line">
+                تسعى للحفاظ على إنسانيتها وسط كل الفوضى، واتخاذ قرارات مصيرية بين الحياة والموت.
+              </div>
+              <div class="vertical-line">
+                تدور حول الفقدان، الانتقام، التسامح، الصداقة. تجربة عاطفية قوية بتقييم 9.3 / 10.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Spider-Man: Miles Morales -->
+<div id="spiderman" class="sui-info reverseop" style="display: flex; gap: 20px; align-items: flex-start;">
+  <div class="sui-nameop" style="flex: 1;">
+    <img src="s.jpeg" width="350" alt="SRed Dead Redemption 2 Image" class="re" />
+    <h2>️🎮 Spider-Man 2: Miles Morales</h2>
+    
+    <div class="vertical-line-container">
+      <div class="vertical-line">🧭 <strong>القصة:</strong></div>
+      <div class="vertical-line">
+        تدور القصة حول "مايلز موراليس" الشاب الذي يكتشف قواه الخارقة بعد وفاة سبايدرمان الأصلي.
+      </div>
+      <div class="vertical-line">
+        يواجه مايلز تهديدات جديدة في مدينة نيويورك خلال فترة الشتاء القارس وسط صراع بين شركة طاقة خطيرة وجماعة متمردة.
+      </div>
+      <div class="vertical-line">
+        مع تطور الأحداث، يجب على مايلز أن يثبت أنه يستحق لقب سبايدرمان ويوازن بين حياته الشخصية ومسؤولياته الجديدة.
+      </div>
+      <div class="vertical-line">
+        تقدم اللعبة تجربة مليئة بالإثارة والمشاعر مع أسلوب قتال سريع ورسومات مذهلة وتقييم ممتاز 9.2 / 10.
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div id="residentevil4" class="sui-info reverseop" style="display: flex; gap: 20px; align-items: flex-start;">
+  <div class="sui-nameop" style="flex: 1;">
+    <img src="R.jpeg" width="350" alt="Resident Evil 4 Image" class="re" />
+    <h2>🎮 Resident Evil 4</h2>
+    
+    <div class="vertical-line-container">
+      <div class="vertical-line">🧭 <strong>القصة:</strong></div>
+      <div class="vertical-line">
+        تدور أحداث اللعبة حول "ليون كينيدي"، عميل أمريكي يُرسل في مهمة لإنقاذ ابنة الرئيس التي اختُطفت.
+      </div>
+      <div class="vertical-line">
+        يجد ليون نفسه في قرية نائية بإسبانيا مليئة بسكان تحولوا إلى مخلوقات مرعبة بفعل طفيلي غامض يُعرف بـ"لاس بلاجاس".
+      </div>
+      <div class="vertical-line">
+        خلال رحلته، يواجه ليون تهديدات متعددة من زعماء طوائف خطيرة ومخلوقات متحولة.
+      </div>
+      <div class="vertical-line">
+        تُقدم اللعبة تجربة أكشن ورعب متكاملة برسومات محسّنة وأسلوب لعب مطوّر وتقييم ممتاز 9.5 / 10.
+      </div>
+    </div>
+  </div>
+</div>
+        
+        <div id="horizonfw" class="sui-info reverseop" style="display: flex; gap: 20px; align-items: flex-start;">
+  <div class="sui-nameop" style="flex: 1;">
+    <img src="H.jpeg" width="350" alt="Horizon Forbidden West Image" class="re" />
+    <h2>🎮 Horizon Forbidden West</h2>
+    
+    <div class="vertical-line-container">
+      <div class="vertical-line">🧭 <strong>القصة:</strong></div>
+      <div class="vertical-line">
+        تتابع القصة بطلتنا "ألوي" في رحلة جديدة إلى الغرب المحظور لإنقاذ البشرية من كارثة بيئية تهدد العالم.
+      </div>
+      <div class="vertical-line">
+        تواجه ألوي أراضي مجهولة مليئة بالآلات المتطورة وقبائل جديدة تمتلك تقنيات خطيرة.
+      </div>
+      <div class="vertical-line">
+        تسعى ألوي لاكتشاف أسرار الماضي ومصدر الوباء المنتشر، بينما تصارع تحديات الطبيعة والآلات العملاقة.
+      </div>
+      <div class="vertical-line">
+        تقدم اللعبة تجربة بصرية خلابة وأسلوب لعب متنوع وتقييم ممتاز 9.3 / 10.
+      </div>
+    </div>
+  </div>
+</div>
+        
+        
+        <div id="hogwarts" class="sui-info reverseop" style="display: flex; gap: 20px; align-items: flex-start;">
+  <div class="sui-nameop" style="flex: 1;">
+    <img src="h.jpeg" width="350" alt="Hogwarts Legacy Image" class="re" />
+    <h2>🎮 Hogwarts Legacy</h2>
+    
+    <div class="vertical-line-container">
+      <div class="vertical-line">🧭 <strong>القصة:</strong></div>
+      <div class="vertical-line">
+        تدور أحداث اللعبة في أواخر القرن التاسع عشر، حيث تلعب بشخصية طالب/طالبة جديد/ة في مدرسة هوجوورتس للسحر.
+      </div>
+      <div class="vertical-line">
+        تكتشف أنك تملك قدرة نادرة على التحكم بسحر قديم وغامض، مما يجذب أنظار قوى مظلمة تهدد عالم السحرة.
+      </div>
+      <div class="vertical-line">
+        بينما تتعلم التعاويذ وتحضر الجرع وتستكشف العالم، تواجه تمرد العفاريت بقيادة "رانروك" وتحالف من السحرة الأشرار.
+      </div>
+      <div class="vertical-line">
+        تقدم اللعبة تجربة سحرية غامرة، عالم مفتوح مليء بالأسرار، وتقييم ممتاز 8.7 / 10.
+      </div>
+    </div>
+  </div>
+</div>
+        
+        
+        
+        
+        
+        
+        <div id="uncharted4" class="sui-info reverseop" style="display: flex; gap: 20px; align-items: flex-start;">
+  <div class="sui-nameop" style="flex: 1;">
+    <img src="U.jpeg" width="350" alt="Uncharted 4 Image" class="re" />
+    <h2>🎮 Uncharted 4: A Thief's End</h2>
+    
+    <div class="vertical-line-container">
+      <div class="vertical-line">🧭 <strong>القصة:</strong></div>
+      <div class="vertical-line">
+        ناثان دريك يعود من التقاعد عندما يظهر شقيقه "سام" ويطلب مساعدته في العثور على كنز القراصنة المفقود.
+      </div>
+      <div class="vertical-line">
+        تنقلك القصة إلى أماكن مذهلة حول العالم، مليئة بالألغاز والمعارك والتسلق والمغامرات الخطيرة.
+      </div>
+      <div class="vertical-line">
+        اللعبة تقدم تجربة سينمائية مذهلة، بأسلوب لعب متقن ورسوم واقعية ومؤثرات بصرية ممتازة.
+      </div>
+      <div class="vertical-line">
+        تقييم اللعبة 9.3 / 10 وتعد من أفضل ألعاب الأكشن والمغامرة على الإطلاق.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="forza5" class="sui-info reverseop" style="display: flex; gap: 20px; align-items: flex-start;">
+  <div class="sui-nameop" style="flex: 1;">
+    <img src="F.jpeg" width="350" alt="Forza Horizon 5 Image" class="re" />
+    <h2>🎮 Forza Horizon 5</h2>
+    
+    <div class="vertical-line-container">
+      <div class="vertical-line">🧭 <strong>الوصف:</strong></div>
+      <div class="vertical-line">
+        انطلق في عالم مفتوح ضخم مستوحى من المكسيك، مع تنوع بيئي مذهل من الصحارى إلى الغابات والجبال.
+      </div>
+      <div class="vertical-line">
+        تقدم اللعبة تجربة سباق حر بأسلوب أركيدي ممتع، مع مئات السيارات المعدلة ورسومات واقعية جداً.
+      </div>
+      <div class="vertical-line">
+        تحتوي على فعاليات متنوعة مثل السباقات، التحديات، القفزات، والاستكشاف الحر.
+      </div>
+      <div class="vertical-line">
+        تقييمها 9 / 10 وتعتبر من أفضل ألعاب السباق في الجيل الجديد.
+      </div>
+    </div>
+  </div>
+</div>
+        
+<div id="ragnarok" class="sui-info reverseop" style="display: flex; gap: 20px; align-items: flex-start;">
+  <div class="sui-nameop" style="flex: 1;">
+    <img src="ap.jpeg" width="350" alt="God of War: Ragnarök Image" class="re" />
+    <h2>🎮 God of War: Ragnarök</h2>
+    
+    <div class="vertical-line-container">
+      <div class="vertical-line">🧭 <strong>القصة:</strong></div>
+      <div class="vertical-line">
+        تستكمل اللعبة أحداث الجزء السابق، حيث يواجه كريتوس وابنه أتريوس نهاية العالم في الميثولوجيا النوردية: "راغنروك".
+      </div>
+      <div class="vertical-line">
+        يتعامل كريتوس مع تحديات جديدة، ويخوض صراعاً ضد آلهة مثل ثور وأودين، بينما يسعى أتريوس لاكتشاف هويته.
+      </div>
+      <div class="vertical-line">
+        تقدم اللعبة مزيجاً رائعاً من القتال العنيف، القصة العميقة، والاستكشاف في عالم نورد متنوع.
+      </div>
+      <div class="vertical-line">
+        تقييم اللعبة 9.6 / 10 وتعتبر من أقوى ألعاب الأكشن والمغامرات على الإطلاق.
+      </div>
+    </div>
+  </div>
+</div>
+<!-- AstroBot -->
+<div id="astrobot" class="sui-info reverseop" style="display: flex; gap: 20px; align-items: flex-start;">
+  <div class="sui-nameop" style="flex: 1;">
+    <img src="AS.jpeg" width="350" alt="AstroBot Image" class="re" />
+    <h2>🎮 AstroBot</h2>
+    <div class="vertical-line-container">
+      <div class="vertical-line">🧭 <strong>القصة:</strong></div>
+      <div class="vertical-line">
+        في AstroBot، تأخذ دور روبوت صغير لطيف يُدعى "آسترو"، يقود فريقاً من الروبوتات في مهمة إنقاذ داخل الفضاء.
+      </div>
+      <div class="vertical-line">
+        بعد أن يتعرض مركبهم لحادث، يتفرق طاقم الروبوتات في كواكب مختلفة، ولك مهمة العثور عليهم واستعادتهم وسط مغامرات مليئة بالتحديات.
+      </div>
+      <div class="vertical-line">
+        كل كوكب يتميز ببيئة فريدة وتصميم ثلاثي الأبعاد مذهل، يتطلب مهارات في القفز، التفاعل، وحل الألغاز، مع دعم لعناصر الواقع الافتراضي (VR) أو DualSense.
+      </div>
+      <div class="vertical-line">
+        اللعبة مشهورة بأسلوبها الإبداعي، تحكمها السلس، ورسوماتها الجميلة التي تناسب جميع الأعمار.
+      </div>
+      <div class="vertical-line">
+        ⭐ <strong>تقييم اللعبة:</strong> 9 / 10 – تجربة ممتعة جداً لعشاق المنصات والمغامرات الخفيفة.
+      </div>
+    </div>
+  </div>
+</div>
+        
+        <!-- Bloodborne -->
+<div id="bloodborne" class="sui-info reverseop" style="display: flex; gap: 20px; align-items: flex-start;">
+  <div class="sui-nameop" style="flex: 1;">
+    <img src="BL.jpeg" width="350" alt="Bloodborne Image" class="re" />
+    <h2>🎮 Bloodborne</h2>
+    <div class="vertical-line-container">
+      <div class="vertical-line">🧭 <strong>القصة:</strong></div>
+      <div class="vertical-line">
+        تدور أحداث اللعبة في مدينة "يارنام" الملعونة، حيث ينتشر وباء غامض يحول السكان إلى وحوش.
+      </div>
+      <div class="vertical-line">
+        أنت تلعب كـ "الصياد" الذي يسعى للكشف عن أسرار المدينة ومواجهة كائنات مرعبة وجنود قدماء تنتمي لعوالم أخرى.
+      </div>
+      <div class="vertical-line">
+        القصة مظلمة، مليئة بالرمزية والتفاصيل الخفية التي تكتشفها تدريجياً من خلال الاستكشاف والقتال.
+      </div>
+      <div class="vertical-line">
+        اللعبة تقدم نظام قتال سريع وعنيف، مع تصميم مراحل مترابط وعوالم عميقة.
+      </div>
+      <div class="vertical-line">
+        تقييم اللعبة 9.5 / 10 لتجربتها الفريدة، وأجوائها المرعبة، وأسلوب اللعب التحدي.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cyberpunk 2077 -->
+<div id="cyberpunk2077" class="sui-info reverseop" style="display: flex; gap: 20px; align-items: flex-start;">
+  <div class="sui-nameop" style="flex: 1;">
+    <img src="77.jpeg" width="350" alt="Cyberpunk 2077 Image" class="re" />
+    <h2>🎮 Cyberpunk 2077</h2>
+    <div class="vertical-line-container">
+      <div class="vertical-line">🧭 <strong>القصة:</strong></div>
+      <div class="vertical-line">
+        تدور أحداث اللعبة في مدينة مستقبلية تُدعى "Night City"، حيث يتحكم المال والتكنولوجيا في كل شيء.
+      </div>
+      <div class="vertical-line">
+        تلعب بشخصية "V"، مرتزق يسعى للعثور على شريحة إلكترونية تمنح الخلود، ويتورط في صراع بين الشركات الكبرى والعصابات.
+      </div>
+      <div class="vertical-line">
+        خلال رحلتك، تواجه اختيارات مصيرية تؤثر على القصة، وتدخل في مواجهات عنيفة واستكشافات واسعة لعالم مفتوح غني بالتفاصيل.
+      </div>
+      <div class="vertical-line">
+        اللعبة تقدم نظام تخصيص متطور، ومهارات متنوعة، ونهاية تعتمد على قراراتك.
+      </div>
+      <div class="vertical-line">
+        تقييم اللعبة 8.8 / 10 بعد تحديثاتها الأخيرة، بفضل القصة العميقة والتحسينات الكبيرة في الأداء.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mortal Kombat 11 -->
+<div id="mortalkombat11" class="sui-info reverseop" style="display: flex; gap: 20px; align-items: flex-start;">
+  <div class="sui-nameop" style="flex: 1;">
+    <img src="11.jpeg" width="350" alt="Mortal Kombat 11 Image" class="re" />
+    <h2>🎮 Mortal Kombat 11</h2>
+    <div class="vertical-line-container">
+      <div class="vertical-line">🧭 <strong>القصة:</strong></div>
+      <div class="vertical-line">
+        في الجزء الحادي عشر من سلسلة مورتال كومبات، يظهر تهديد جديد يُدعى "كرونيكا"، وهي تتحكم بالزمن وتهدف لإعادة تشكيل التاريخ لصالحها.
+      </div>
+      <div class="vertical-line">
+        يجتمع الأبطال مثل "سوب زيرو" و"سكوربيون" و"رايدن" لمواجهة الأعداء القدامى والجدد في معارك دموية لحماية مستقبل العوالم.
+      </div>
+      <div class="vertical-line">
+        القصة تمزج بين الماضي والحاضر، حيث تتقابل الشخصيات بنسخها القديمة، ما يضيف صراعات جديدة ومشوقة.
+      </div>
+      <div class="vertical-line">
+        تقدم اللعبة نظام قتال محسّن، حركات "Fatalities" مذهلة، ونمط قصة سينمائي مذهل.
+      </div>
+      <div class="vertical-line">
+        تقييم اللعبة 9.1 / 10، وتعتبر من أقوى ألعاب القتال بفضل أسلوبها العنيف ورسوماتها القوية.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Dark Souls III -->
+<div id="darksouls3" class="sui-info reverseop" style="display: flex; gap: 20px; align-items: flex-start;">
+  <div class="sui-nameop" style="flex: 1;">
+    <img src="III.jpeg" width="350" alt="Dark Souls III Image" class="re" />
+    <h2>🎮 Dark Souls III</h2>
+    <div class="vertical-line-container">
+      <div class="vertical-line">🧭 <strong>القصة:</strong></div>
+      <div class="vertical-line">
+        تدور أحداث اللعبة في مملكة "Lothric" التي بدأت تنهار بسبب نهاية عصر النار، حيث تعود الأرواح القديمة للحياة في محاولة لإبقاء النار مشتعلة.
+      </div>
+      <div class="vertical-line">
+        يلعب اللاعب دور "Unkindled" – محارب عاد من الموت – ليهزم "Lords of Cinder" ويعيد التوازن إلى العالم.
+      </div>
+      <div class="vertical-line">
+        القصة تتسم بالغموض والرمزية، وتشجع اللاعب على الاستكشاف لفهم تفاصيل العالم من خلال الحوارات والبيئات.
+      </div>
+      <div class="vertical-line">
+        تقدم اللعبة تحدياً صعباً، نظام قتال دقيق، وزعماء ملحميين يتطلبون استراتيجيات خاصة.
+      </div>
+      <div class="vertical-line">
+        تقييم اللعبة 9.3 / 10، وتُعتبر من أقوى ألعاب الـRPG ذات الطابع المظلم والعمق في التصميم.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+        <!-- Red Dead Redemption 2 -->
+        <div id="reddead" class="sui-info reverseop" style="display: flex; gap: 20px; align-items: flex-start;">
+          <div class="sui-nameop" style="flex: 1;">
+            <img src="IMG_5269.jpeg" width="350" alt="Red Dead Redemption 2 Image" class="re" />
+            <h2>🎮 Red Dead Redemption 2</h2>
+
+            <div class="vertical-line-container">
+              <div class="vertical-line">🧭 <strong>القصة:</strong></div>
+              <div class="vertical-line">
+                تدور القصة في الغرب الأمريكي خلال أواخر القرن التاسع عشر.
+              </div>
+              <div class="vertical-line">
+                يتحكم اللاعب بـ "آرتور مورغان"، عضو في عصابة فان دير ليند، الذي يواجه تحولات في عالمه وأخلاقه.
+              </div>
+              <div class="vertical-line">
+                القصة مليئة بالمغامرات، الصراعات الداخلية، والتحديات التي تجسد نهاية عصر الغرب المتوحش.
+              </div>
+              <div class="vertical-line">
+                تقييمات اللاعبين: 9.7 / 10. من أفضل الألعاب القصصية في التاريخ.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+
+  <footer>
+    <p style="color: white; text-align:center; margin: 15px;">Copyright © 2025 All rights reserved by Luew Store</p>
+  </footer>
+
+<script>
+  const gameMap = {
+    witcher3: ["witcher3", "witcher"],
+    eldenring: ["eldenring", "elden"],
+    sekiro: ["sekiro"],
+    ghost: ["ghost", "tsushima"],
+    lastofus: ["lastofus", "last"],
+    reddead: ["reddead", "red"],
+    assassin: ["assassin", "creed"],
+    horizonfw: ["horizon", "forbidden", "west", "horizonfw"],
+    residentevil4: ["resident", "evil", "re4", "residentevil4"],
+    spiderman: ["spiderman", "spider", "miles", "morales", "spiderman2"],
+    hogwarts: ["hogwarts", "legacy", "harry", "potter"]
+  };
+  
+  function showSuggestions() {
+    const input = document.getElementById("gameInput").value.toLowerCase().trim();
+    const dataList = document.getElementById("gameSuggestions");
+    dataList.innerHTML = "";
+    
+    if (!input) return;
+    
+    const addedGames = new Set();
+    
+    for (const [key, aliases] of Object.entries(gameMap)) {
+      for (const alias of aliases) {
+        if (alias.startsWith(input)) {
+          if (!addedGames.has(key)) {
+            const option = document.createElement("option");
+            option.value = key;
+            dataList.appendChild(option);
+            addedGames.add(key);
+          }
+          break;
+        }
+      }
+    }
+  }
+  
+  document.getElementById("gameInput").addEventListener("input", showSuggestions);
+  
+  document.getElementById("goBtn").addEventListener("click", () => {
+    const inputValRaw = document.getElementById("gameInput").value.toLowerCase().trim().replace(/\s+/g, "");
+    if (!inputValRaw) {
+      alert("يرجى كتابة اسم اللعبة للبحث.");
+      return;
+    }
+    
+    let foundKey = null;
+    
+    for (const [key, aliases] of Object.entries(gameMap)) {
+      if (aliases.some(alias => inputValRaw.includes(alias))) {
+        foundKey = key;
+        break;
+      }
+    }
+    
+    if (foundKey) {
+      const section = document.getElementById(foundKey);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+        history.replaceState(null, null, `#${foundKey}`);
+      } else {
+        alert("عذراً، لم أتمكن من إيجاد القسم الخاص باللعبة.");
+      }
+    } else {
+      alert("اللعبة غير موجودة، حاول تكتب اسم اللعبة بشكل صحيح.");
+    }
+  });
+  
+  document.documentElement.style.setProperty('--game-bg-color', 'rgba(50, 150, 50, 0.25)')
+  
+  
+  
+  
+  
+  ;
+</script>
+</body>
+</html> 
+
+
